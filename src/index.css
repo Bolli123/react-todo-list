@@ -1,13 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
+  background-color: rgb(241, 240, 240);
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgb(225 29 72);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.App {
+  width: 50%;
+}
+
+@media only screen and (max-width: 1500px) {
+  .App {
+    Width: 90%
+  }
+}
+
+.Calendar {
+  border: 0 !important;
+}
+
+.finishCheck {
+  accent-color: rgb(225 29 72);
+}
+
+.todoInfo {
+  position: relative;
+  transition: width 1s;
+}
+
+.todoInfo {
+  position: relative;
+}
+
+.strikeThrough::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: black;
+  animation-name: strikeThru;
+  animation-duration: .3s;
+  animation-timing-function: ease-in;
+}
+
+.upArrow {
+  width: 100%; 
+
+}
+
+.downArrow {
+  width: 100%; 
+
+  transform: rotate(180deg);
+}
+
+@keyframes strikeThru{
+  0%   { width : 0; }
+  100% { width: 100%; }
 }
